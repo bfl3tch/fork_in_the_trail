@@ -174,6 +174,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  arm64-darwin-23
 
 DEPENDENCIES
   debug
@@ -182,9 +183,6 @@ DEPENDENCIES
   rails (~> 7.0.8, >= 7.0.8.6)
   rspec
   tzinfo-data
-
-RUBY VERSION
-   ruby 2.7.2p137
 
 BUNDLED WITH
    2.4.22
