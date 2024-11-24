@@ -14,7 +14,7 @@ class User < ApplicationRecord
     return if self.api_key.present?
 
     loop do
-      self.api_key = SecureRandom.hex(20)
+      self.api_key = SecureRandom.hex(16)
       break unless User.exists?(api_key: api_key)
     end
   end
