@@ -1,0 +1,198 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://places.googleapis.com/v1/places:searchText
+    body:
+      encoding: UTF-8
+      string: '{"textQuery":"surf"}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Goog-Api-Key:
+      - GOOGLE_PLACES_API_KEY
+      X-Goog-Fieldmask:
+      - places.displayName,places.formattedAddress,places.priceLevel
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Sun, 24 Nov 2024 19:39:30 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Server-Timing:
+      - gfet4t7; dur=75
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "places": [
+            {
+              "formattedAddress": "1210 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+              "displayName": {
+                "text": "Surfin' Turtle Ice Cream Shoppe",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1777 S Patrick Dr, Indian Harbour Beach, FL 32937, USA",
+              "displayName": {
+                "text": "Another Ride Surf Shop",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "7008 N Atlantic Ave, Cape Canaveral, FL 32920, USA",
+              "displayName": {
+                "text": "Core Surf",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "4001 N Atlantic Ave, Cocoa Beach, FL 32931, USA",
+              "displayName": {
+                "text": "Cocoa Beach Surf Company",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "101 5th Ave, Indialantic, FL 32903, USA",
+              "displayName": {
+                "text": "Longboard House",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "47 S Atlantic Ave, Cocoa Beach, FL 32931, USA",
+              "displayName": {
+                "text": "Nex Generation Surf School",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "401 Meade Ave, Cocoa Beach, FL 32931, USA",
+              "displayName": {
+                "text": "Cocoa Beach Surf School",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "119 Surf Dr Unit 2, Cocoa Beach, FL 32931, USA",
+              "displayName": {
+                "text": "One Love Surf Lessons",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "A1A Jimmy Buffett Mem Hwy, Melbourne, FL 32903, USA",
+              "displayName": {
+                "text": "Jagger Lee Surf Company",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1600 S Atlantic Ave, Cocoa Beach, FL 32931, USA",
+              "displayName": {
+                "text": "Surfet 321",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "4151 N Atlantic Ave, Cocoa Beach, FL 32931, USA",
+              "displayName": {
+                "text": "Ron Jon Surf Shop",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "304 A1A Jimmy Buffett Mem Hwy Unit B, Satellite Beach, FL 32937, USA",
+              "displayName": {
+                "text": "Villons",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "3220 S Atlantic Ave, Cocoa Beach, FL 32931, USA",
+              "displayName": {
+                "text": "Oceansports World",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "2334 N Hwy A1A, Indialantic, FL 32903, USA",
+              "displayName": {
+                "text": "MTB Surf Skate N Footwear",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "100 4th Ave, Indialantic, FL 32903, USA",
+              "displayName": {
+                "text": "Surf Style 106: Surf, Swimwear, Sporting Goods in Indialantic",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "5350 Ocean Beach Blvd, Cocoa Beach, FL 32931, USA",
+              "displayName": {
+                "text": "Florida Luxury Surfing",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "101 S Miramar Ave, Indialantic, FL 32903, USA",
+              "displayName": {
+                "text": "Surf Style 104: Surf, Swimwear, Sporting Goods in Indialantic",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "209 Ocean Ave, Melbourne Beach, FL 32951, USA",
+              "displayName": {
+                "text": "Catalyst",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "108 N Orlando Ave, Cocoa Beach, FL 32931, USA",
+              "displayName": {
+                "text": "School of Surf",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "8898 S Hwy A1A, Melbourne Beach, FL 32951, USA",
+              "displayName": {
+                "text": "Sebastian Inlet Surf & Sport",
+                "languageCode": "en"
+              }
+            }
+          ]
+        }
+  recorded_at: Sun, 24 Nov 2024 19:39:30 GMT
+recorded_with: VCR 6.3.1
