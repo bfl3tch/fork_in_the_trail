@@ -9,7 +9,7 @@ RSpec.describe 'Error Handling', type: :request do
         headers = { 'CONTENT_TYPE' => 'application/json' }
         malformed_json = '{ "user": { "email": "test@example.com", "password": "password123" ' # Missing closing braces
 
-        post api_v1_users_path, params: malformed_json, headers: headers
+        post users_path, params: malformed_json, headers: headers
 
         expect(response).to have_http_status(:bad_request)
         expect(json['error']).to eq('Invalid JSON format')
@@ -19,17 +19,17 @@ RSpec.describe 'Error Handling', type: :request do
 
     context 'when a required parameter is missing' do
       it 'returns a 400 Bad Request' do
-        post api_v1_restaurants_search_path, params: {}, headers: { 'X-Api-Key' => user.api_key }
+        post search_path, params: {}, headers: { 'X-Api-Key' => user.api_key }
 
         expect(response).to have_http_status(:bad_request)
-        expect(json['error']).to eq('Query param empty or missing')
+        expect(json['error']).to eq("Required parameter 'query' is missing or empty")
         expect(json['metadata']).to be_present
       end
     end
 
     context 'when the user is unauthorized' do
       it 'returns a 401 Unauthorized' do
-        post api_v1_restaurants_search_path, params: { query: 'Pizza near me' }
+        post search_path, params: { query: 'Pizza near me' }
 
         expect(response).to have_http_status(:unauthorized)
         expect(json['error']).to eq('Unauthorized request')

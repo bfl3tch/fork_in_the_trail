@@ -11,7 +11,7 @@ class Api::V1::RestaurantsController < ApplicationController
     params.require(:query)
   end
 
-  private def serialize_result(result)   
+  private def serialize_result(result)
     result[:places].map { |place| RestaurantSerializer.new(place, current_user).serialize }
   end
 end

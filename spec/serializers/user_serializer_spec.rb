@@ -10,6 +10,6 @@ RSpec.describe UserSerializer do
     expect(data[:attributes]).to include(
       email: user.email,
       api_key: user.api_key
-  )  
+  )
   end
 end

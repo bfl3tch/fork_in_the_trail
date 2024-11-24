@@ -14,7 +14,7 @@ RSpec.describe 'Users API', type: :request do
       end
 
       it 'creates a new user and returns serialized user data' do
-        post api_v1_users_path, params: valid_params
+        post users_path, params: valid_params
 
         expect(response).to have_http_status(:created)
         expect(json[:data][:attributes].keys).to contain_exactly("email", "api_key")
@@ -33,7 +33,7 @@ RSpec.describe 'Users API', type: :request do
       end
 
       it 'returns an error with validation messages' do
-        post api_v1_users_path, params: invalid_params
+        post users_path, params: invalid_params
 
         expect(response).to have_http_status(:unprocessable_entity)
         expect(json['errors']).to include("Password confirmation doesn't match Password")
@@ -44,7 +44,7 @@ RSpec.describe 'Users API', type: :request do
       let(:missing_params) { { user: { email: '' } } }
 
       it 'returns a bad request error' do
-        post api_v1_users_path, params: missing_params
+        post users_path, params: missing_params
 
         expect(response).to have_http_status(:unprocessable_entity)
         expect(json['errors']).to include("Email can't be blank",

@@ -3,7 +3,7 @@ class RestaurantLookupService
     Faraday.new(url: 'https://places.googleapis.com') do |f|
       f.headers['Content-Type'] = 'application/json'
       f.headers['X-Goog-Api-Key'] = ENV['GOOGLE_PLACES_API_KEY']
-      f.headers['X-Goog-FieldMask'] = 'places.displayName,places.formattedAddress,places.priceLevel,places.photos'
+      f.headers['X-Goog-FieldMask'] = 'places.id,places.displayName,places.formattedAddress,places.priceLevel,places.photos'
     end
   end
 
