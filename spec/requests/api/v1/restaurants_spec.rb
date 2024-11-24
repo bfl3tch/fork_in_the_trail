@@ -9,7 +9,7 @@ RSpec.describe 'Restaurants', type: :request do
   describe 'post#search', :vcr do
     context 'with valid query' do
       it 'returns a list of restaurants' do
-        post api_v1_restaurants_search_path, params: { query: query }, headers: headers
+        post search_path, params: { query: query }, headers: headers
 
         expect(response).to have_http_status(:ok)
         expect(json['result']).to be_an(Array)
@@ -21,7 +21,7 @@ RSpec.describe 'Restaurants', type: :request do
       end
 
       it 'returns a list of restaurants for another query' do
-        post api_v1_restaurants_search_path, params: { query: surf_query }, headers: headers
+        post search_path, params: { query: surf_query }, headers: headers
 
         expect(response).to have_http_status(:ok)
         expect(json['result']).to be_an(Array)
@@ -65,7 +65,7 @@ RSpec.describe 'Restaurants', type: :request do
 
     context 'when missing the auth header' do
       it 'returns an unauthorized error' do
-        post api_v1_restaurants_search_path, params: { query: query }
+        post search_path, params: { query: query }
 
         expect(response).to have_http_status(:unauthorized)
         expect(json['error']).to eq('Unauthorized request')
@@ -76,7 +76,7 @@ RSpec.describe 'Restaurants', type: :request do
       let(:headers) { { 'X-Api-Key' => 'badkey' } }
 
       it 'returns an unauthorized error' do
-        post api_v1_restaurants_search_path, params: { query: query }, headers: headers
+        post search_path, params: { query: query }, headers: headers
 
         expect(response).to have_http_status(:unauthorized)
         expect(json['error']).to eq('Unauthorized request')
