@@ -31,3 +31,6 @@
 
 # Ignore environment variables
 .env
+
+# Ignore debugging history
+.byebug_history
