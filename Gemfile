@@ -23,6 +23,7 @@ end
 
 group :test do
   gem "webmock", '~> 3.18'
+  gem "vcr"
 end
 
 
