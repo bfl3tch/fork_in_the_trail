@@ -1,5 +1,5 @@
 RSpec.describe UserSerializer do
-  it 'serializes the user correctly', :aggregate_failures  do
+  it 'serializes the user correctly' do
     user = create(:user)
     serialized = UserSerializer.new(user).serializable_hash
 
