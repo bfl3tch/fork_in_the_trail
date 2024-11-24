@@ -22,7 +22,7 @@ RSpec.describe 'Error Handling', type: :request do
         post search_path, params: {}, headers: { 'X-Api-Key' => user.api_key }
 
         expect(response).to have_http_status(:bad_request)
-        expect(json['error']).to eq('Query param empty or missing')
+        expect(json['error']).to eq("Required parameter 'query' is missing or empty")
         expect(json['metadata']).to be_present
       end
     end

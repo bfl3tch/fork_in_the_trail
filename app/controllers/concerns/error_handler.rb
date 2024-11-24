@@ -23,9 +23,9 @@ module ErrorHandler
     render_error_with_metadata('Invalid JSON format', :bad_request)
   end
 
-  private def handle_param_missing(_exception)
-    render_error_with_metadata('Query param empty or missing', :bad_request)
-  end
+  private def handle_param_missing(exception)
+    render_error_with_metadata("Required parameter '#{exception.param}' is missing or empty", :bad_request)
+    end
 
   private def handle_unauthorized_error(exception)
     render_error_with_metadata('Unauthorized request', :unauthorized)
