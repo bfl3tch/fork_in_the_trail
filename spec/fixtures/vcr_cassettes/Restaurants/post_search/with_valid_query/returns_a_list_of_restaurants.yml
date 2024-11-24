@@ -1,0 +1,216 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://places.googleapis.com/v1/places:searchText
+    body:
+      encoding: UTF-8
+      string: '{"textQuery":"lunch near Satellite Beach, FL"}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Goog-Api-Key:
+      - GOOGLE_PLACES_API_KEY
+      X-Goog-Fieldmask:
+      - places.displayName,places.formattedAddress,places.priceLevel
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Sun, 24 Nov 2024 18:12:59 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Server-Timing:
+      - gfet4t7; dur=62
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "places": [
+            {
+              "formattedAddress": "1201 S Patrick Dr, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+              "displayName": {
+                "text": "Long Doggers",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1301 S Patrick Dr, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+              "displayName": {
+                "text": "Banana River Cafe",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "306 A1A Jimmy Buffett Mem Hwy IND, IND HBR BCH, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_MODERATE",
+              "displayName": {
+                "text": "Goombay's Beachside",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1462 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_MODERATE",
+              "displayName": {
+                "text": "Cadillac Cove",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1246 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_MODERATE",
+              "displayName": {
+                "text": "Sandbar Sports Grill Satellite Beach",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "500 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+              "displayName": {
+                "text": "Henry's Cuban Cafe",
+                "languageCode": "es"
+              }
+            },
+            {
+              "formattedAddress": "588 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+              "displayName": {
+                "text": "Prime Empanada & Catering",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1132 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_MODERATE",
+              "displayName": {
+                "text": "Mavericks Hangar Bar & Grill",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1753 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_MODERATE",
+              "displayName": {
+                "text": "Morning Glory Eatery, LLC",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1114 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_MODERATE",
+              "displayName": {
+                "text": "NipponThai Restaurant",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1024 A1A Jimmy Buffett Mem Hwy #148, Satellite Beach, FL 32937, USA",
+              "displayName": {
+                "text": "Poke Fin Satellite Beach",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1592 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_MODERATE",
+              "displayName": {
+                "text": "The Wicked Pineapple",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "2605 N Hwy A1A, Melbourne, FL 32903, USA",
+              "priceLevel": "PRICE_LEVEL_MODERATE",
+              "displayName": {
+                "text": "Longboards Oceanfront Grille",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "240 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+              "displayName": {
+                "text": "Lily's Beachside Restaurant",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "2051 S Patrick Dr, Indian Harbour Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_MODERATE",
+              "displayName": {
+                "text": "Too Cool Cafe",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "971 E Eau Gallie Blvd A, Melbourne, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_MODERATE",
+              "displayName": {
+                "text": "Coasters Pub & Biergarten",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "254 E Eau Gallie Blvd, Indian Harbour Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+              "displayName": {
+                "text": "Frankie's Beachside - Indian Harbour beach",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1390 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_MODERATE",
+              "displayName": {
+                "text": "Las Monarcas Mexican Restaurant",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "1360 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+              "displayName": {
+                "text": "Da Kine Diego's Insane Burrito",
+                "languageCode": "en"
+              }
+            },
+            {
+              "formattedAddress": "190 A1A Jimmy Buffett Mem Hwy, Satellite Beach, FL 32937, USA",
+              "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+              "displayName": {
+                "text": "Little Phillies Cheesesteaks",
+                "languageCode": "en"
+              }
+            }
+          ]
+        }
+  recorded_at: Sun, 24 Nov 2024 18:12:59 GMT
+recorded_with: VCR 6.3.1
