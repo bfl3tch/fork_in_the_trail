@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :password, presence: true, length: { minimum: 6 }
   validates :api_key, presence: true, uniqueness: true
-  
+
   private def generate_api_key
     return if self.api_key.present?
 

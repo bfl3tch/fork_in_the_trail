@@ -28,7 +28,7 @@ class RestaurantSerializer
   private def build_photo_url
     photo_name = @place.dig(:photos, 0, :name)
     return nil unless photo_name
-    
+
     "https://places.googleapis.com/v1/#{photo_name}/media?key=#{ENV['GOOGLE_PLACES_API_KEY']}&maxWidthPx=400"
   end
 
