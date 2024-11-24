@@ -20,6 +20,36 @@ RSpec.describe 'Restaurants', type: :request do
       end
     end
 
+    context 'when the API connection fails' do
+      before do
+        allow(RestaurantLookupService).to receive(:connection)
+          .and_raise(Faraday::ConnectionFailed.new('Connection error'))
+      end
+
+      it 'renders the connection error message' do
+        post '/search', params: { query: query }, headers: headers
+
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(json['error']).to eq('Connection issue, please try again.')
+        expect(json['metadata']).to have_key('timestamp')
+      end
+    end
+
+    context 'when the API returns invalid JSON' do
+      before do
+        stub_request(:post, 'https://places.googleapis.com/v1/places:searchText')
+          .to_return(status: 200, body: 'Invalid JSON')
+      end
+
+      it 'renders the JSON response error message' do
+        post '/search', params: { query: query }, headers: headers
+
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(json['error']).to eq('Invalid JSON response from server, try again.')
+        expect(json['metadata']).to have_key('timestamp')
+      end
+    end
+
     context 'when missing the auth header' do
       it 'returns an unauthorized error' do
         post api_v1_restaurants_search_path, params: { query: query }
