@@ -18,7 +18,7 @@ RSpec.describe 'Error Handling', type: :request do
     end
 
     context 'when a required parameter is missing' do
-      xit 'returns a 400 Bad Request' do
+      it 'returns a 400 Bad Request' do
         post api_v1_restaurants_search_path, params: {}, headers: { 'X-Api-Key' => user.api_key }
 
         expect(response).to have_http_status(:bad_request)
@@ -28,7 +28,7 @@ RSpec.describe 'Error Handling', type: :request do
     end
 
     context 'when the user is unauthorized' do
-      xit 'returns a 401 Unauthorized' do
+      it 'returns a 401 Unauthorized' do
         post api_v1_restaurants_search_path, params: { query: 'Pizza near me' }
 
         expect(response).to have_http_status(:unauthorized)
