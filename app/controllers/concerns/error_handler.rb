@@ -6,7 +6,6 @@ module ErrorHandler
   included do
     rescue_from ActionDispatch::Http::Parameters::ParseError, with: :handle_parse_error
     rescue_from ActionController::ParameterMissing, with: :handle_param_missing
-    rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
     rescue_from UnauthorizedError, with: :handle_unauthorized_error
   end
 
@@ -16,10 +15,6 @@ module ErrorHandler
 
   private def handle_param_missing(_exception)
     render_error_with_metadata('Query param empty or missing', :bad_request)
-  end
-
-  private def handle_record_not_found(exception)
-    render_error_with_metadata(exception.message, :not_found)
   end
 
   private def handle_unauthorized_error(exception)
